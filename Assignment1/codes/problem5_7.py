@@ -33,34 +33,36 @@ print("The probability that not more than 2 will bear 'Y' mark is: " , probab_fu
 print("The probability that at least one ball will bear 'Y' mark is: " , probab_func(n , p , q , 0 , 5))
 print("The probability that the number of balls with 'X' mark and 'Y' mark will be equal is: " , probab_func(n , p , q , 3 , 3))
 
-k = 1000000
-sample_space = np.random.binomial(n,p,k)
+#imported numpy for making binomial distribution
+
+num_trails = 1000000
+sample_space = np.random.binomial(n , p , num_trails)
 print("Some number this is " , sample_space)
 count = 0
 for i in sample_space:
   if i == 6:
     count = count + 1
 
-prob = count / k
-print("The probability that all will bear X is: " , prob)
+probability_check = count / num_trails
+print("The probability that all will bear X is: " , probability_check)
 
 count = 0
 for i in sample_space:
   if i == 3:
     count = count + 1
-prob = count / k
-print("The probability that the number of balls with 'X' mark and 'Y' mark will be equal is: " , prob)
+probability_check = count / num_trails
+print("The probability that the number of balls with 'X' mark and 'Y' mark will be equal is: " , probability_check)
 
 count = 0
 for i in sample_space:
   if i == 4 or i == 5 or i == 6:
     count = count + 1
-prob = count / k
-print("The probability that not more than 2 will bear 'Y' mark is: " , prob)
+probability_check = count / num_trails
+print("The probability that not more than 2 will bear 'Y' mark is: " , probability_check)
 
 count = 0
 for i in sample_space:
   if i != 6:
     count = count + 1
-prob = count / k
-print("The probability that at least one ball will bear 'Y' mark is: " , prob)
+probability_check = count / num_trails
+print("The probability that at least one ball will bear 'Y' mark is: " , probability_check)
