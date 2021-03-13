@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AI1103: Assignment 1}
+\author{Tanmay Garg \\ CS20BTECH11063 EE20BTECH11048}
+\date{13 March 2021}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem Statement: }
+An urn contains 25 balls of which 10 balls
+bear a mark ’X’ and the remaining 15 bear a
+mark ’Y’.
+A ball is drawn at random from the
+urn, its mark is noted down and it is replaced.
+If 6 balls are drawn in this way, find the
+probability that:
+\begin{enumerate}
+    \item all will bear 'X' mark.
+    \item not more than 2 will bear 'Y' mark.
+    \item at least one ball will bear 'Y' mark.
+    \item the number of balls with 'X' mark and 'Y' mark will be equal.
+\end{enumerate}
+
+\section*{Solution:}
+Let X be the number of balls which have 'X' mark on them\\
+Using the expression of binomial distribution
+\[P(X = r) = {n \choose r} p^r q^{n-r}\]
+We have
+\[n = 6\]
+\[p = \frac{2}{5} = 0.4\] 
+\[q = \frac{3}{5} = 0.6\] 
+For \((i)\) we need to find \(P(X = 6)\)
+\[P(X = 6) = {6 \choose 6} p^6 q^0 = \left(\frac{2}{5} \right)^6 = 0.004096\]
+For \((ii)\) we need to find \(P(X \geq 4)\)
+\[P(X \geq 4) = \sum_{r = 4}^6 {6 \choose r} p^r q^{n-r} = 0.1792\]
+For \((iii)\) we need to find \(P(X \leq 5)\)
+\[P(X \leq 5) = \sum_{r = 0}^5 {6 \choose r} p^r q^{n - r} = 0.995904\]
+For \((iv)\) we need to find \(P(X = 3)\)
+\[P(X = 3) = {6 \choose 3} p^3 q^3 = 0.27648\]
+
+
+
+\end{document}
