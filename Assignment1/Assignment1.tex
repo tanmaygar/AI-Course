@@ -1,13 +1,144 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
 
-\title{AI1103: Assignment 1}
-\author{Tanmay Garg \\ CS20BTECH11063 EE20BTECH11048}
-\date{13 March 2021}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
 
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
 \begin{document}
 
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{AI1103: Assignment 1}
+\author{Tanmay Garg \\CS20BTECH11063 EE20BTECH11048}
 \maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}
+need to put link here
+\end{lstlisting}
+%
+and latex-tikz codes from 
+%
+\begin{lstlisting}
+need to need here
+\end{lstlisting}
 
 \section*{Problem Statement: }
 An urn contains 25 balls of which 10 balls
@@ -32,15 +163,23 @@ We have
 \[n = 6\]
 \[p = \frac{2}{5} = 0.4\] 
 \[q = \frac{3}{5} = 0.6\] 
+
 For \((i)\) we need to find \(P(X = 6)\)
 \[P(X = 6) = {6 \choose 6} p^6 q^0 = \left(\frac{2}{5} \right)^6 = 0.004096\]
+
 For \((ii)\) we need to find \(P(X \geq 4)\)
-\[P(X \geq 4) = \sum_{r = 4}^6 {6 \choose r} p^r q^{n-r} = 0.1792\]
+\[P(X \geq 4)  = \sum_{r = 4}^6 {6 \choose r} p^r q^{n-r}\]
+\[= {6 \choose 4} \left(\frac{2}{5} \right)^4 \left(\frac{3}{5} \right)^2 + {6 \choose 5} \left(\frac{2}{5} \right)^5 \left(\frac{3}{5} \right) + {6 \choose 6} \left(\frac{2}{5} \right)^6  \]
+\[=\frac{432}{3125} + \frac{576}{15625} + \frac{64}{15625}\]
+\[= \frac{112}{625} = 0.1792\]
+\\
 For \((iii)\) we need to find \(P(X \leq 5)\)
-\[P(X \leq 5) = \sum_{r = 0}^5 {6 \choose r} p^r q^{n - r} = 0.995904\]
+\[P(X \leq 5) = \sum_{r = 0}^5 {6 \choose r} p^r q^{n - r}\]
+\[= {6 \choose 0} \left(\frac{3}{5} \right)^6 + {6 \choose 1} \left(\frac{2}{5} \right)^1 \left(\frac{3}{5} \right)^5 + {6 \choose 2} \left(\frac{2}{5} \right)^2 \left(\frac{3}{5} \right)^4 +{6 \choose 3} \left(\frac{2}{5} \right)^3 \left(\frac{3}{5} \right)^3\]\[ + {6 \choose 4} \left(\frac{2}{5} \right)^4 \left(\frac{3}{5} \right)^2 + {6 \choose 5} \left(\frac{2}{5} \right)^5 \left(\frac{3}{5} \right)\]
+\[= \frac{729}{15625} + \frac{2916}{15625} + \frac{972}{3125} + \frac{864}{3125} + \frac{432}{3125} + \frac{576}{15625}\]
+\[= \frac{15561}{15625} = 0.995904\]
 For \((iv)\) we need to find \(P(X = 3)\)
-\[P(X = 3) = {6 \choose 3} p^3 q^3 = 0.27648\]
-
-
+\[P(X = 3) = {6 \choose 3} p^3 q^3\]
+\[={6 \choose 3} \left(\frac{2}{5} \right)^3 \left(\frac{3}{5} \right)^3 = 0.27648\]
 
 \end{document}
