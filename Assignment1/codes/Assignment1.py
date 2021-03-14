@@ -37,7 +37,7 @@ print("The probability that the number of balls with 'X' mark and 'Y' mark will 
 
 num_trails = 1000000
 sample_space = np.random.binomial(n , p , num_trails)
-print("Some number this is " , sample_space)
+#print("Some number this is " , sample_space)
 count = 0
 for i in sample_space:
   if i == 6:
