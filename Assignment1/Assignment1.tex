@@ -163,24 +163,29 @@ We have
 \[n = 6\]
 \[p = \frac{2}{5} = 0.4\] 
 \[q = \frac{3}{5} = 0.6\] 
-
-For \((i)\) we need to find \(P(X = 6)\)
+\begin{enumerate}
+    \item For \((i)\) we need to find \(P(X = 6)\)
 \[P(X = 6) = {6 \choose 6} p^6 q^0 = \left(\frac{2}{5} \right)^6 = 0.004096\]
 
-For \((ii)\) we need to find \(P(X \geq 4)\)
+\item For \((ii)\) we need to find \(P(X \geq 4)\)
 \[P(X \geq 4)  = \sum_{r = 4}^6 {6 \choose r} p^r q^{n-r}\]
 \[= {6 \choose 4} \left(\frac{2}{5} \right)^4 \left(\frac{3}{5} \right)^2 + {6 \choose 5} \left(\frac{2}{5} \right)^5 \left(\frac{3}{5} \right) + {6 \choose 6} \left(\frac{2}{5} \right)^6  \]
 \[=\frac{432}{3125} + \frac{576}{15625} + \frac{64}{15625}\]
 \[= \frac{112}{625} = 0.1792\]
-\\
-For \((iii)\) we need to find \(P(X \leq 5)\)
+
+\item For \((iii)\) we need to find \(P(X \leq 5)\)
 \[P(X \leq 5) = \sum_{r = 0}^5 {6 \choose r} p^r q^{n - r}\]
 \[= {6 \choose 0} \left(\frac{3}{5} \right)^6 + {6 \choose 1} \left(\frac{2}{5} \right)^1 \left(\frac{3}{5} \right)^5 + {6 \choose 2} \left(\frac{2}{5} \right)^2 \left(\frac{3}{5} \right)^4 +{6 \choose 3} \left(\frac{2}{5} \right)^3 \left(\frac{3}{5} \right)^3\]\[ + {6 \choose 4} \left(\frac{2}{5} \right)^4 \left(\frac{3}{5} \right)^2 + {6 \choose 5} \left(\frac{2}{5} \right)^5 \left(\frac{3}{5} \right)\]
 \[= \frac{729}{15625} + \frac{2916}{15625} + \frac{972}{3125} + \frac{864}{3125} + \frac{432}{3125} + \frac{576}{15625}\]
 \[= \frac{15561}{15625} = 0.995904\]
-For \((iv)\) we need to find \(P(X = 3)\)
+
+\item For \((iv)\) we need to find \(P(X = 3)\)
 \[P(X = 3) = {6 \choose 3} p^3 q^3\]
 \[={6 \choose 3} \left(\frac{2}{5} \right)^3 \left(\frac{3}{5} \right)^3 = 0.27648\]
+
+\end{enumerate}
+
+
 
 \includegraphics{Figure_1}
 \end{document}
