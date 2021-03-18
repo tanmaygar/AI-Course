@@ -166,20 +166,26 @@ Using the expression of binomial distribution
     n = 6,\quad p = 0.4,\quad q = 0.6
 \end{align}
 
-
-\resizebox{9cm}{1cm}{
+\begin{table}[]
+    \centering
+    \resizebox{\columnwidth}{!}{
 \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    n &  6 & 6 & 6 & 6\\
-    \hline
-    Condition & $P(X = 6)$& $P(X \geq 4)$& $P(X \leq 5)$ & $P(X = 3)$ \\
-    \hline
-    Value & 0.004096 & 0.1792 & 0.995904 & 0.27648\\
-    \hline
-    Case & $(i)$ & $(ii)$ & $(iii)$ & $(iv)$\\
-    \hline
+\hline
+n &  6 & 6 & 6 & 6\\
+\hline
+Condition & $P(X = 6)$& $P(X \geq 4)$& $P(X \leq 5)$ & $P(X = 3)$ \\
+\hline
+Value & 0.004096 & 0.1792 & 0.995904 & 0.27648\\
+\hline
+Case & $(i)$ & $(ii)$ & $(iii)$ & $(iv)$\\
+\hline
 \end{tabular}
 }
-\linebreak
+    \caption*{TABLE: Probabilities of each case }
+    \label{tab:my_label}
+\end{table}
+
+
 \includegraphics[width=0.5\textwidth]{Figure_1.png}
+
 \end{document}
