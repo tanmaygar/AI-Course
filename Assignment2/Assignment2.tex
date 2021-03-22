@@ -136,13 +136,13 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 Download all python codes from 
 \begin{lstlisting}
-need to put
+https://github.com/tanmaygar/AI-Course/blob/main/Assignment2/codes/problem_47.py
 \end{lstlisting}
 %
 and latex-tikz codes from 
 %
 \begin{lstlisting}
-need to put
+https://github.com/tanmaygar/AI-Course/blob/main/Assignment2/Assignment2.tex
 \end{lstlisting}
 
 \section*{Problem GATE-EC-2019-Q47: }
@@ -161,39 +161,44 @@ where the threshold $\theta  \in [−1,1]$ is chosen so as to minimize the proba
 \section*{Solution:}
 We know that 
 \begin{align}
-    X = {-1,+1}\\
+    X \in \{-1,+1\}\\
     N \in [-2,2]\\
     Y = X + N\\
-    P(X = -1) = 0.2\\
-    P(X = +1) = 0.8
+    \pr{X = -1} = 0.2\\
+    \pr{X = +1} = 0.8
 \end{align}
 Since $N$ is uniformly distributed\\
 $\therefore$ the probability distribution function of $N$ is:
 
-\begin{tikzpicture}
+\begin{tikzpicture}[
+  declare function={
+    func(\x)= (\x < -2) * (0)   +
+              and(\x >= -2, \x < 2) * (0.25)     +
+              (\x >= 2) * (0)
+   ;
+  }
+]
 \begin{axis}[
-    axis lines = left,
-    xlabel = $x$,
-    ylabel = $y$,
+  axis x line=middle, axis y line=middle,
+  ymin=0, ymax=1, ytick={0,0.25,0.5,0.75,1}, ylabel=$f(N)$,
+  xmin=-3, xmax=3, xtick={-3,...,3}, xlabel=$N$,
+  domain=-3:3,
+  samples=100,
 ]
-\addplot [
-    domain=-3:3, 
-    samples=100, 
-    color=red,
-]
-{0.25};
+
+\addplot [blue,thick] {func(x)};
 \end{axis}
 \end{tikzpicture}
 \\
-For $X = \hat{X}$ we need to check for each case
+For $X \neq \hat{X}$ we need to check for each case. Integrating the p.d.f to find the probability for each case
 \begin{align}
 \therefore
-    P(\theta < -1 + N) &= \int_{\theta + 1}^2 \frac{1}{4}dN\\
+    \pr{\theta < -1 + N} &= \int_{\theta + 1}^2 \frac{1}{4}dN\\
     &= \frac{1}{4}(1-\theta)\label{eq:0.0.7}
 \end{align}
 \begin{align}
 \therefore
-    P(\theta> N + 1) &= \int_{-2}^{\theta -1} \frac{1}{4}dN\\
+    \pr{\theta> N + 1} &= \int_{-2}^{\theta -1} \frac{1}{4}dN\\
     &= \frac{1}{4}(1+\theta)\label{eq:0.0.9}
 \end{align}
 The probability of error:
@@ -206,10 +211,22 @@ Substituting \eqref{eq:0.0.7} and \eqref{eq:0.0.9} in \eqref{eq:0.0.10}. We get:
 \begin{align}
     \pr {\hat{X} \neq X} = 0.2\cdot \frac{1}{4}(1-\theta) + 0.8\cdot \frac{1}{4}(1+\theta)
 \end{align}
-Putting $\theta = -1$, we get
+On simplifying the equation we get
 \begin{align}
-    \pr {\hat{X} \neq X} = 0.1
+    \pr {\hat{X} \neq X} = \frac{1}{4} + \frac{3}{20}\theta
 \end{align}
-    
+Since this is a linear equation in $\theta$, the minimum will occur at boundary points.
+Putting $\theta = +1$, we get
+\begin{align}
+    \pr {\hat{X} \neq X} = 0.4
+\end{align}
+but on putting $\theta = -1$, we get
+\begin{align}
+    \pr {\hat{X} \neq X} = 0.1\\
+\end{align}
+Hence the value of probability of error is:
+\begin{align}
+    \therefore \pr {\hat{X} \neq X} = 0.1
+\end{align}
 
 \end{document}
