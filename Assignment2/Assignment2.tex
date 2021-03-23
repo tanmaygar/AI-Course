@@ -192,30 +192,34 @@ $\therefore$ the probability distribution function of $N$ is:
 \\
 The cdf of this uniform probability distribution function is
 \begin{align}
-    F_X(x) &= \int_{-\infty}^xf(N)dN\\
+    F_X(x) &= \int_{-\infty}^xf(N)dN \\ 
     &=\int_{-2}^x\frac{1}{4}dN\\
-    &=\frac{x+2}{4}
+    &=\frac{x+2}{4}\label{eq:0.0.8}
 \end{align}
-For $X \neq \hat{X}$ we need to check for each case. Integrating the p.d.f to find the probability for each case
+For $X \neq \hat{X}$ we need to check for each case. Using equation \eqref{eq:0.0.8}
 \begin{align}
 \therefore
-    \pr{\theta < -1 + N} &= \int_{\theta + 1}^2 \frac{1}{4}dN\\
-    &= \frac{1}{4}(1-\theta)\label{eq:0.0.7}
+    \pr{N>\theta + 1} &= 1-\pr{N < \theta + 1}\\
+    &= 1-F_X(\theta + 1)\\
+    &= 1- \frac{\theta + 3}{4}\\
+    &= \frac{1}{4}(1-\theta)\label{eq:0.0.12}
 \end{align}
 \begin{align}
 \therefore
-    \pr{\theta> N + 1} &= \int_{-2}^{\theta -1} \frac{1}{4}dN\\
-    &= \frac{1}{4}(1+\theta)\label{eq:0.0.9}
+    \pr{N < \theta-1} &= F_X(\theta - 1)\\
+    &= \frac{1}{4}(1+\theta)\label{eq:0.0.14}
 \end{align}
 The probability of error:
 \begin{align}
 \nonumber
     \pr {\hat{X} \neq X} = P(-1)\cdot {P(\theta < -1 + N)} \\ 
-            \quad+ P(1)\cdot {P(\theta> N + 1)}\label{eq:0.0.10}
+            \quad+ P(1)\cdot {P(\theta> N + 1)}\label{eq:0.0.15}
 \end{align}
-Substituting \eqref{eq:0.0.7} and \eqref{eq:0.0.9} in \eqref{eq:0.0.10}. We get:
+Substituting \eqref{eq:0.0.12} and \eqref{eq:0.0.14} in \eqref{eq:0.0.15}. We get:
 \begin{align}
-    \pr {\hat{X} \neq X} = 0.2\cdot \frac{1}{4}(1-\theta) + 0.8\cdot \frac{1}{4}(1+\theta)
+\nonumber
+    \pr {\hat{X} \neq X} &= 0.2\cdot \frac{1}{4}(1-\theta) \\
+    & \quad+ 0.8\cdot \frac{1}{4}(1+\theta)
 \end{align}
 On simplifying the equation we get
 \begin{align}
