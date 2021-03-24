@@ -158,28 +158,34 @@ f(x,y) = \begin{cases}
 Then $P(Y > \text{max}(X,-X))$ is
 
 \section*{Solution:}
-Since we require $Y > \text{max}(X,-X)$
+The pdf of $X$ and $Y$ are:
 \begin{align}
-    \text{max}(X,-X) = |X|
+    f_X(x)&=\int_{-\infty}^{\infty}f(x,y)dy\\
+    &=\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\frac{1}{\pi}dy\\
+    &=\frac{2\sqrt{1-x^2}}{\pi}
 \end{align}
-We need to find
 \begin{align}
-    \pr{Y>|X|}
+    f_Y(y)&=\int_{-\infty}^{\infty}f(x,y)dx\\
+    &=\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\frac{1}{\pi}dx\\
+    &=\frac{2\sqrt{1-y^2}}{\pi}
 \end{align}
-Integrating the probability distribution function on our domain
+The value of $\pr{-X<Y<X}$ is:
 \begin{align}
-\pr{Y > |X|} &= \iint_{\{y > \left|x\right|\}} f(x,y) dx\,dy\\
-&= \iint_{\{y > \left|x\right|, \ x^2 + y^2 \leq 1\}}  \frac{1}{\pi} dx\,dy\\
-&\quad + \iint_{\{y > \left|x\right|, \ x^2 + y^2 > 1\}}  0dx\,dy\\
-&= \frac{1}{\pi} \iint_{\{y > \left|x\right|, \ x^2 + y^2 \leq 1\}} dx\,dy
+\nonumber
+\pr{-X<Y<X} &=\int_{-X}^Xf_Y(y)dy\\
+ &=\int_{-X}^X\frac{2\sqrt{1-y^2}}{\pi}dy\\
+ &=\frac{2}{\pi}\left(\sin^{-1}{X} + X\sqrt{1-X^2}\right)
 \end{align}
-On converting to $r$ and $\theta$ form, we get:
+
+Integrating our probability over all of $X$ we get the value of $\pr{Y>\text{max}(X,-X)}$:
 \begin{align}
-\pr{Y > |X|} &= \frac{1}{\pi} \int_{\pi/4}^{3\pi/4} \int_0^1 r\,dr\,d\theta \\
-&= \frac{1}{\pi} \int_{\pi/4}^{3\pi/4} \left(\frac{1}{2}r^2\right)\bigg|_0^1 d\theta\\
-&= \frac{1}{\pi} \int_{\pi/4}^{3\pi/4} \frac{1}{2} d\theta\\
-&= \frac{1}{2\pi} \left(\frac{3\pi}{4} - \frac{\pi}{4}\right)\\
-&= \frac{1}{2\pi} \cdot \frac{\pi}{2}\\
-&= \frac{1}{4}
+ &=\int_{-\infty}^{\infty}f_X(x)\pr{-X<Y<X}dx\\
+    &=\left(\frac{2}{\pi}\right)^2\int_0^1\sqrt{1-x^2}\left(\sin^{-1}{X} + X\sqrt{1-X^2}\right)dx\\
+    &=\frac{4\cdot{\pi}^2}{{\pi}^2\cdot16}\\
+    &=\frac{1}{4}
+\end{align}
+The probability for:
+\begin{align}
+    \pr{Y>\text{max}(X,-X)} = \frac{1}{4}
 \end{align}
 \end{document}
