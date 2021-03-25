@@ -134,12 +134,10 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-Download all python codes from 
-\begin{lstlisting}
-need
-\end{lstlisting}
+
+
 %
-and latex-tikz codes from 
+Download all latex-tikz codes from 
 %
 \begin{lstlisting}
 https://github.com/tanmaygar/AI-Course/blob/main/Assignment3/Assignment3.tex
@@ -179,8 +177,10 @@ The value of $\pr{-X<Y<X}$ is:
 
 Integrating our probability over all of $X$ we get the value of $\pr{Y>\text{max}(X,-X)}$:
 \begin{align}
- &=\int_{-\infty}^{\infty}f_X(x)\pr{-X<Y<X}dx\\
-    &=\left(\frac{2}{\pi}\right)^2\int_0^1\sqrt{1-x^2}\left(\sin^{-1}{X} + X\sqrt{1-X^2}\right)dx\\
+ &=\int_{-\infty}^{\infty}f_X(x)\pr{-x<Y<x}dx\\
+    &=\left(\frac{2}{\pi}\right)^2\int_0^1\sqrt{1-x^2}\left(\sin^{-1}{x} + x\sqrt{1-x^2}\right)dx\\
+&=\left(\frac{2}{\pi}\right)^2\left(\frac{\left(\sin^{-1}{x} +x\sqrt{1-x^2}\right)^2}{4} \bigg |_0^1\right)\\
+&=\left(\frac{2}{\pi}\right)^2\left(\frac{\pi^2}{16} - 0\right)\\
     &=\frac{4\cdot{\pi}^2}{{\pi}^2\cdot16}\\
     &=\frac{1}{4}
 \end{align}
