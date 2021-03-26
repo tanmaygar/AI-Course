@@ -136,13 +136,13 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 Download all python codes from 
 \begin{lstlisting}
-need
+https://github.com/tanmaygar/AI-Course/blob/main/Assignment4/codes/GATE-2015(CS-SET-3)-Q37.py
 \end{lstlisting}
 %
 and latex-tikz codes from 
 %
 \begin{lstlisting}
-need
+https://github.com/tanmaygar/AI-Course/blob/main/Assignment4/Assignment4.tex
 \end{lstlisting}
 \section*{Problem GATE 2015(CS-SET 3), Q.37: }
 Suppose $X_i$ for $i = 1, 2, 3$ are independent
@@ -159,17 +159,17 @@ We know that
 \end{align}
 For
 \begin{align}
-\nonumber
-    Y = 0\\
-    X_1X_2 \oplus X_3 = 0\\
-    \because X_3 = 0,\quad \therefore X_1X_2 = 0
+    Y &= 0\\
+    X_1X_2 \oplus X_3 &= 0\\
+    \because X_3 = 0,\quad \therefore X_1X_2 &= 0
 \end{align}
 The number of possibilities for $X_1X_2=0$
-\[
-(X_1,X_2) = \begin{cases}
+\begin{align}
+    (X_1,X_2) = \begin{cases}
 (0,0)\\(0,1)\\(1,0)
 \end{cases}
-\]
+\end{align}
+
 Since the random variables are independent of each other
 \begin{align}
     \pr{X_i = a, X_j = b} &= \pr{X_i=a} \cdot \pr{X_j=b}\\
@@ -195,6 +195,7 @@ Since the random variables are independent of each other
     \label{tab:my_label}
 \end{table}
 \begin{align}
+\nonumber
 \pr{X_1X_2=0} &= \pr{X_1=0,X_2=0} \\ \nonumber
     &\quad+ \pr{X_1=0,X_2=1}\\ &\quad+ \pr{X_1=1,X_2=0}\\
     &=\frac{1}{4} +\frac{1}{4} + \frac{1}{4}= \frac{3}{4}
@@ -208,4 +209,7 @@ Upon substituting in 0.0.1
 \begin{align}
     \pr{Y=0|X_3=0} = \dfrac{3}{4} = 0.75
 \end{align}
+
+\includegraphics[width=0.45\textwidth]{Figure_1.png}
+ 
 \end{document}
