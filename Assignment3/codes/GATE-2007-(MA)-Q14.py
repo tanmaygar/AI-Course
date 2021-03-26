@@ -44,5 +44,11 @@ plt.bar(x + 0.2, probab_sim, color = 'g', width = 0.2, label = 'Simulated')
 plt.xlabel('Theoretical v/s Simulated')
 plt.ylabel('Probability')
 plt.xticks(x  + 0.2/2,[''])
+a = np.arange(0,0.3,0.01)
+plt.yticks(a,a)
+plt.margins(0.05)
+plt.grid(b = True, color ='black',
+        linestyle ='-.', linewidth = 0.5,
+        alpha = 0.2)
 plt.legend()
 plt.show()
