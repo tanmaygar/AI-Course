@@ -154,8 +154,8 @@ Define another random variable $Y = X_1 X_2 \oplus X_3$, where $\oplus$ denotes 
 \section*{Solution:}
 We know that
 \begin{align}
-    \pr{Y=0|X_3=0} &= \dfrac{\pr{Y=0,X_3=0}}{\pr{X_3=0}}\\
-    \pr{X_3 = 0} &= \frac{1}{2}
+    \pr{Y=0|X_3=0} &= \dfrac{\pr{Y=0,X_3=0}}{\pr{X_3=0}} \label{eq:0.0.1}\\
+    \pr{X_3 = 0} &= \frac{1}{2} \label{eq:0.0.2}
 \end{align}
 For
 \begin{align}
@@ -198,14 +198,14 @@ Since the random variables are independent of each other
 \nonumber
 \pr{X_1X_2=0} &= \pr{X_1=0,X_2=0} \\ \nonumber
     &\quad+ \pr{X_1=0,X_2=1}\\ &\quad+ \pr{X_1=1,X_2=0}\\
-    &=\frac{1}{4} +\frac{1}{4} + \frac{1}{4}= \frac{3}{4}
+    &=\frac{1}{4} +\frac{1}{4} + \frac{1}{4}= \frac{3}{4} 
 \end{align}
 \begin{align}
     \pr{Y=0,X_3=0} &= \pr{X_1X_2=0}\cdot\pr{X_3=0}\\
     &=\frac{3}{4} \cdot \frac{1}{2}\\
-    &=\frac{3}{8}
+    &=\frac{3}{8} \label{eq:0.0.15}
 \end{align}
-Upon substituting in 0.0.1
+Upon substituting \eqref{eq:0.0.15} and \eqref{eq:0.0.2} in \eqref{eq:0.0.1}
 \begin{align}
     \pr{Y=0|X_3=0} = \dfrac{3}{4} = 0.75
 \end{align}
