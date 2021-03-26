@@ -167,19 +167,29 @@ The pdf of $X$ and $Y$ are:
     &=\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}\frac{1}{\pi}dx\\
     &=\frac{2\sqrt{1-y^2}}{\pi}
 \end{align}
+The cdf of $Y$ is:
+\begin{align}
+    F_Y(y)&=\int_{-\infty}^{y}f_Y(y)dy\\
+    &=\int_{-1}^{y}\frac{2\sqrt{1-y^2}}{\pi}dy\\
+    &=\frac{2}{\pi}\left(\dfrac{\sin^{-1}{y} + y\sqrt{1-y^2}}{2} + \frac{\pi}{4}\right)
+\end{align}
 The value of $\pr{-X<Y<X}$ is:
 \begin{align}
-\nonumber
-\pr{-X<Y<X} &=\int_{-X}^Xf_Y(y)dy\\
- &=\int_{-X}^X\frac{2\sqrt{1-y^2}}{\pi}dy\\
+\pr{-X<Y<X} &=F_Y(X)-F_Y(-X)\\
  &=\frac{2}{\pi}\left(\sin^{-1}{X} + X\sqrt{1-X^2}\right)
 \end{align}
 
 Integrating our probability over all of $X$ we get the value of $\pr{Y>\text{max}(X,-X)}$:
 \begin{align}
  &=\int_{-\infty}^{\infty}f_X(x)\pr{-x<Y<x}dx\\
-    &=\left(\frac{2}{\pi}\right)^2\int_0^1\sqrt{1-x^2}\left(\sin^{-1}{x} + x\sqrt{1-x^2}\right)dx\\
-&=\left(\frac{2}{\pi}\right)^2\left(\frac{\left(\sin^{-1}{x} +x\sqrt{1-x^2}\right)^2}{4} \bigg |_0^1\right)\\
+    &=\left(\frac{2}{\pi}\right)^2\int_0^1\sqrt{1-x^2}\left(\sin^{-1}{x} + x\sqrt{1-x^2}\right)dx
+\end{align}
+Substituting
+\begin{align} 
+u &= \sin^{-1}{x} + x\sqrt{1-x^2}\\
+\frac{du}{dx} &= 2\sqrt{1-x^2}\\
+&=\left(\frac{2}{\pi}\right)^2\int_0^{\frac{\pi}{2}}\frac{u}{2}du\\
+&=\left(\frac{2}{\pi}\right)^2\left(\frac{u^2}{4} \bigg |_0^{\frac{\pi}{2}}\right)\\
 &=\left(\frac{2}{\pi}\right)^2\left(\frac{\pi^2}{16} - 0\right)\\
     &=\frac{4\cdot{\pi}^2}{{\pi}^2\cdot16}\\
     &=\frac{1}{4}
