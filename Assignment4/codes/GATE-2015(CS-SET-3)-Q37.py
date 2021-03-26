@@ -6,20 +6,35 @@ from scipy.stats import bernoulli
 from scipy.stats import norm
 from scipy.stats import binom
 
-
+#number of test cases
 k = 100000
+#A = (Y = 0 and X3 = 0)
 count_A = 0
-count_B=0
+
+#B = X3 = 0
+count_B = 0
+
+#for loop to move through all test cases
 for i in range(k):
+  #generate random variable using bernoulli distribution
   data_bern = bernoulli.rvs(size = 3, p=0.5)
+
   #print(data_bern)
   if data_bern[2] == 0:
+    #counting number of times B is coming to be true
     count_B = count_B + 1
+
   if data_bern[2] == 0 and data_bern[1] * data_bern[0] == 0:
+    #counting number of times A is coming to be true
     count_A = count_A + 1
 
+#probability for occurence of A
 probab_A = count_A/k
+
+#probability for occurence of B
 probab_B = count_B/k
+
+#required conditional probability
 probab = probab_A/probab_B
 print("The probability is: ", probab)
 
