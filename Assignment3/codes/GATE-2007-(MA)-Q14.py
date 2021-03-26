@@ -7,18 +7,27 @@ from scipy.stats import bernoulli
 from scipy.stats import norm
 from scipy.stats import binom
 from scipy.stats import semicircular
+
+#number of test cases for each variable
 k = 10000
 
+#counter for counting the number of times favourable situation occurs
 count = 0
-
+#creating an array of x coordinate using semicircular function
 data_x = semicircular.rvs(loc = 0, scale = 1, size = k, random_state = None)
+
+#creating an array of x coordinate using semicircular function
 data_y = semicircular.rvs(loc = 0, scale = 1, size = k, random_state = None)
+
+#comparing each term of both arrays and counting number of times the favourable situation occurs
 for i in range(k):
   for j in range(k):
     #print(" " + str(data_y[j]) + ":" + str(data_x[i]))
     if (data_y[j] > abs(data_x[i])):
       count = count + 1
 
+#probability of the event is number of times the situation occured / total test cases
+# total test cases is k^2
 probab = count/pow(k,2)
 print("The probability is: ", probab)
 
