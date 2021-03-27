@@ -183,9 +183,9 @@ The value of $\pr{-X<Y<X}$ is:
  &=\frac{2}{\pi}\left(\sin^{-1}{X} + X\sqrt{1-X^2}\right)
 \end{align}
 
-Integrating our probability over all of $X$ we get the value of $\pr{Y>\text{max}(X,-X)}$:
+Integrating our probability over all of $X$ we get the value of $ E[\pr{-x<Y<x}]$:
 \begin{align}
- &=\int_{-\infty}^{\infty}f_X(x)\pr{-x<Y<x}dx\\
+&=\int_{-\infty}^{\infty}f_X(x)\pr{-x<Y<x}dx\\
     &=\left(\frac{2}{\pi}\right)^2\int_0^1\sqrt{1-x^2}\left(\sin^{-1}{x} + x\sqrt{1-x^2}\right)dx
 \end{align}
 Substituting
