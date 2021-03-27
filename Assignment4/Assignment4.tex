@@ -159,8 +159,8 @@ We know that
 \end{align}
 For
 \begin{align}
-    Y &= 0\\
-    X_1X_2 \oplus X_3 &= 0\\
+    \because Y = (X_1X_2) \oplus X_3 &= 0\\
+    \therefore X_1X_2 &= X_3\\
     \because X_3 = 0,\quad \therefore X_1X_2 &= 0
 \end{align}
 %The number of possibilities for $X_1X_2=0$
@@ -170,13 +170,12 @@ For
 %\end{cases}
 %\end{align}
 
-Since the random variables are independent of each other
-\begin{align}
-    \pr{X_i = a, X_j = b} &= \pr{X_i=a} \cdot \pr{X_j=b}\\
-    i &\neq j\\
-    a,b &\in \{0,1\}\\
-    i,j &\in \{1,2,3\}
-\end{align}
+The random variables are independent of each other:
+%\begin{align}
+%    \pr{X_i = a, X_j = b} &= \pr{X_i=a} \cdot \pr{X_j=b}\\
+%    i \neq j,\quad i,j &\in \{1,2,3\}\\
+%    a,b &\in \{0,1\}
+%\end{align}
 \begin{table}[h!]
     \centering
     \resizebox{\columnwidth}{!}
@@ -201,11 +200,12 @@ Since the random variables are independent of each other
     &=\frac{1}{4} +\frac{1}{4} + \frac{1}{4}= \frac{3}{4} 
 \end{align}
 \begin{align}
-    \pr{Y=0,X_3=0} &= \pr{X_1X_2=0}\cdot\pr{X_3=0}\\
+    \pr{Y=0,X_3=0} &= \pr{X_1X_2=X_3=0}\\
+    &= \pr{X_1X_2=0}\cdot\pr{X_3=0}\\
     &=\frac{3}{4} \cdot \frac{1}{2}\\
-    &=\frac{3}{8} \label{eq:0.0.15}
+    &=\frac{3}{8} \label{case_A}
 \end{align}
-Upon substituting \eqref{eq:0.0.15} and \eqref{eq:0.0.2} in \eqref{eq:0.0.1}
+Upon substituting \eqref{case_A} and \eqref{eq:0.0.2} in \eqref{eq:0.0.1}
 \begin{align}
     \pr{Y=0|X_3=0} = \dfrac{3}{4} = 0.75
 \end{align}
