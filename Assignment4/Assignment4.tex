@@ -154,12 +154,16 @@ Define another random variable $Y = X_1 X_2 \oplus X_3$, where $\oplus$ denotes 
 For
 \begin{align}
     \because Y = (X_1X_2) \oplus X_3 &= 0\\
-    \implies X_1X_2 &= X_3
+    \implies X_1X_2 &= X_3 \label{all_equal}
 \end{align}
 \begin{align}
     \pr{Y=0|X_3=0} &= \dfrac{\pr{Y=0,X_3=0}}{\pr{X_3=0}} \label{eq:0.0.1}\\
-    \pr{X_3 = 0} &= \frac{1}{2} \label{eq:0.0.2}\\
-     \text{if } X_3 = 0,\quad \therefore X_1X_2 &= 0
+    &=\dfrac{\pr{X_1X_2 = X_3, X_3 = 0}}{\pr{X_3=0}}\\
+    \pr{X_3 = 0} &= \frac{1}{2} \label{eq:0.0.2}
+\end{align}
+if $X_3 = 0$, from \eqref{all_equal}
+\begin{align}
+    X_1X_2 &= 0
 \end{align}
 %The number of possibilities for $X_1X_2=0$
 %\begin{align}
