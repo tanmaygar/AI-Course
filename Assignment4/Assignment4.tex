@@ -150,18 +150,16 @@ and identically distributed random variables
 whose probability mass functions are
 $\pr{X_i = 0} = \pr{X_i = 1} = \frac{1}{2}$ for $i = 1, 2, 3$.
 Define another random variable $Y = X_1 X_2 \oplus X_3$, where $\oplus$ denotes XOR. Then $\pr{Y = 0|X_3 = 0} =$
-
 \section*{Solution:}
-We know that
-\begin{align}
-    \pr{Y=0|X_3=0} &= \dfrac{\pr{Y=0,X_3=0}}{\pr{X_3=0}} \label{eq:0.0.1}\\
-    \pr{X_3 = 0} &= \frac{1}{2} \label{eq:0.0.2}
-\end{align}
 For
 \begin{align}
     \because Y = (X_1X_2) \oplus X_3 &= 0\\
-    \implies X_1X_2 &= X_3\\
-    \because X_3 = 0,\quad \therefore X_1X_2 &= 0
+    \implies X_1X_2 &= X_3
+\end{align}
+\begin{align}
+    \pr{Y=0|X_3=0} &= \dfrac{\pr{Y=0,X_3=0}}{\pr{X_3=0}} \label{eq:0.0.1}\\
+    \pr{X_3 = 0} &= \frac{1}{2} \label{eq:0.0.2}\\
+     \text{if } X_3 = 0,\quad \therefore X_1X_2 &= 0
 \end{align}
 %The number of possibilities for $X_1X_2=0$
 %\begin{align}
@@ -169,7 +167,6 @@ For
 %(0,0)\\(0,1)\\(1,0)
 %\end{cases}
 %\end{align}
-
 The random variables are independent of each other:
 %\begin{align}
 %    \pr{X_i = a, X_j = b} &= \pr{X_i=a} \cdot \pr{X_j=b}\\
@@ -199,6 +196,7 @@ The random variables are independent of each other:
     &\quad+ \pr{X_1=0,X_2=1}\\ &\quad+ \pr{X_1=1,X_2=0}\\
     &=\frac{1}{4} +\frac{1}{4} + \frac{1}{4}= \frac{3}{4} 
 \end{align}
+
 \begin{align}
     \pr{Y=0,X_3=0} &= \pr{X_1X_2=X_3=0}\\
     &= \pr{X_1X_2=0}\cdot\pr{X_3=0}\\
@@ -209,7 +207,5 @@ Upon substituting \eqref{case_A} and \eqref{eq:0.0.2} in \eqref{eq:0.0.1}
 \begin{align}
     \pr{Y=0|X_3=0} = \dfrac{3}{4} = 0.75
 \end{align}
-
 \includegraphics[width=0.485\textwidth]{Figure_2.png}
-
 \end{document}
