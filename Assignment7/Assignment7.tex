@@ -175,24 +175,24 @@ In the world where the $2^{nd}$ person arrives at $10:40$ am the \eqref{main_eq}
 \end{align}
 The Poisson function distribution for time interval $t$ and rate $\lambda$ for a random variable $X$:
 \[
-    f_X(x,t) = \frac{(\lambda t)^x \exp{(-\lambda t)}}{x!}
+    f_X(x;t) = \frac{(\lambda t)^x \exp{(-\lambda t)}}{x!}
 \]
 For the time interval $p$:
 \begin{align}
     \lambda = 4, t &= 0.5, x= 0\\
-    \pr{X_p = 0} &= f_X(0,0.5)\\
+    \pr{X_p = 0} &= f_X(0;0.5)\\
     &= e^{-2}\label{eq_1}
 \end{align}
 For the time interval $q$:
 \begin{align}
     \lambda = 4, t &= \frac{1}{6},x = 1\\
-    \pr{X_q = 1} &= f_X(1, \frac{1}{6})\\
+    \pr{X_q = 1} &= f_X(1; \frac{1}{6})\\
     &= \frac{2}{3}e^{\frac{-2}{3}} \label{eq_2}
 \end{align}
 For the time interval $r$:
 \begin{align}
     \lambda = 4, t &= \frac{2}{3}, x = 1\\
-    \pr{X_r = 1} &= f_X(1, \frac{2}{3})\\
+    \pr{X_r = 1} &= f_X(1; \frac{2}{3})\\
     &= \frac{8}{3}e^{\frac{-8}{3}} \label{eq_3}
 \end{align}
 Substituting \eqref{eq_1} \eqref{eq_2} \eqref{eq_3} in \eqref{sub_eq}:
