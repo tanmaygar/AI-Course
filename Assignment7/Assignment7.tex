@@ -157,46 +157,47 @@ Suppose customers arrive in a shop according to a Poisson process with rate $4$ 
     \end{enumerate}
 \end{multicols}
 \section*{Solution:}
-Let the time interval be divided as:
+Let $X$ denote the random variable for the time interval, and it is divided as:
 \begin{align*}
-    t_1 &= 10:00 - 10:30\\
-    t_2 &= 10:30 - 10:40\\
-    t_3 &= 10:00 - 10:40
+    p &= 10:00 - 10:30\\
+    q &= 10:30 - 10:40\\
+    r &= 10:00 - 10:40
 \end{align*}
+At the instant of $10:40$, let the random variable be $Y$.
 We need to find
 \begin{align}
-    \pr{0\text{ in } t_1 | 2^{nd}\text{ arrives at 10:40}} \label{main_eq}
+    \pr{X_p = 0 | Y = 2} \label{main_eq}
 \end{align}
 In the world where the $2^{nd}$ person arrives at $10:40$ am the \eqref{main_eq} becomes:
 \begin{align}
-    &=\frac{\pr{0\text{ in } t_1, 1 \text{ in } t_2}}{\pr{1 \text{ in } t_3}}\\
-    &= \frac{\pr{0\text{ in } t_1} \cdot \pr{1 \text{ in } t_2}}{\pr{1 \text{ in } t_3}}\label{sub_eq}
+    &=\frac{\pr{X_p = 0, X_q = 1}}{\pr{X_r = 1}}\\
+    &= \frac{\pr{X_p = 0} \times \pr{X_q = 1}}{\pr{X_r = 1}}\label{sub_eq}
 \end{align}
 The Poisson function distribution for time interval $t$ and rate $\lambda$ for a random variable $X$:
 \[
-    f_X(x,t) = \frac{(\lambda \cdot t)^x \exp{(-\lambda \cdot t)}}{x!}
+    f_X(x,t) = \frac{(\lambda t)^x \exp{(-\lambda t)}}{x!}
 \]
-For the time interval $t_1$:
+For the time interval $p$:
 \begin{align}
     \lambda = 4, t &= 0.5, x= 0\\
-    \pr{0\text{ in } t_1} &= f_X(0,0.5)\\
+    \pr{X_p = 0} &= f_X(0,0.5)\\
     &= e^{-2}\label{eq_1}
 \end{align}
-For the time interval $t_2$:
+For the time interval $q$:
 \begin{align}
     \lambda = 4, t &= \frac{1}{6},x = 1\\
-    \pr{1 \text{ in } t_2} &= f_X(1, \frac{1}{6})\\
+    \pr{X_q = 1} &= f_X(1, \frac{1}{6})\\
     &= \frac{2}{3}e^{\frac{-2}{3}} \label{eq_2}
 \end{align}
-For the time interval $t_3$:
+For the time interval $r$:
 \begin{align}
     \lambda = 4, t &= \frac{2}{3}, x = 1\\
-    \pr{1 \text{ in } t_3} &= f_X(1, \frac{2}{3})\\
+    \pr{X_r = 1} &= f_X(1, \frac{2}{3})\\
     &= \frac{8}{3}e^{\frac{-8}{3}} \label{eq_3}
 \end{align}
 Substituting \eqref{eq_1} \eqref{eq_2} \eqref{eq_3} in \eqref{sub_eq}:
 \begin{align}
-    \pr{0\text{ in } t_1 | 2^{nd}\text{ arrives at 10:40}} = \frac{1}{4}
+    \pr{X_p = 0 | Y = 2} = \frac{1}{4}
 \end{align}
 Hence, \textbf{Option 1} is correct\\
 \includegraphics[width=\columnwidth]{Figure_4.png}
