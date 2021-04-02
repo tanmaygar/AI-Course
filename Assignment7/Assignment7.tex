@@ -157,13 +157,22 @@ Suppose customers arrive in a shop according to a Poisson process with rate $4$ 
     \end{enumerate}
 \end{multicols}
 \section*{Solution:}
-Let $X$ denote the random variable for the time interval, and it is divided as:
-\begin{align*}
-    p &= 10:00 - 10:30\\
-    q &= 10:30 - 10:40\\
-    r &= 10:00 - 10:40
-\end{align*}
-At the instant of $10:40$, let the random variable be $Y$.
+\begin{table}[h]
+\resizebox{\columnwidth}{!}{
+    \begin{tabular}{|c|c|}
+    \hline
+         Random Variable &  Time at which people arrive\\
+         \hline
+        $X_p$ & $p=10:00 - 10:30$\\
+        $X_q$ & $q=10:30 - 10:40$\\
+        $X_r$ & $r=10:00 - 10:40$\\
+        $Y$ & $10:40$\\
+        \hline
+    \end{tabular}
+}
+    \caption{Random Variables}
+    \label{tab:my_label}
+\end{table}
 We need to find
 \begin{align}
     \pr{X_p = 0 | Y = 2} \label{main_eq}
