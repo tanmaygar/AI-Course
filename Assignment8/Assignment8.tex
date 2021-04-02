@@ -1,0 +1,214 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{amsthm}
+\allowbreak
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\usepackage{caption}
+\usepackage{amsthm}
+
+
+
+\DeclareUnicodeCharacter{2212}{-}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+\graphicspath{ {./images/} }
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{$\left\vert#1\right\vert$}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{$\left\lVert#1\right\rVert$}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E$\left[ #1 \right]$}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{AI1103: Assignment 8}
+\author{Tanmay Garg \\CS20BTECH11063 EE20BTECH11048}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+need
+\end{lstlisting}
+\section*{Problem CSIR UGC NET EXAM (Dec 2016), Q.109: }
+$X_1,X_2,\ldots,X_n$ are independent and identically
+distributed as $N(\mu, \sigma^2)$, $-\infty < \mu < \infty$, $\sigma^2 > 0$. Then
+\begin{enumerate}
+    \item $\sum_1^n\frac{(X_i-\bar{X})^2}{n-1}$ is the Minimum Variance Unbiased Estimate of $\sigma^2$\\
+    \item $\sqrt{\sum_1^n\frac{(X_i-\bar{X})^2}{n-1}}$ is the Minimum Variance Unbiased Estimate of $\sigma$\\
+    \item $\sum_1^n\frac{(X_i-\bar{X})^2}{n}$ is the Maximum Likelihood Estimate of $\sigma^2$\\
+    \item $\sqrt{\sum_1^n\frac{(X_i-\bar{X})^2}{n}}$ is the Maximum Likelihood \qquad Estimate of $\sigma$
+\end{enumerate}
+
+\section*{Solution:}
+The pdf for each random variable is same as they are all identical and independent Normal Distributions with same $\mu$ and $\sigma^2$.
+\begin{align}
+    f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp{\frac{(x-\mu)^2}{2\sigma^2}}
+\end{align}
+Let us take our maximum likelihood function for given random variable $X_i$
+\begin{align}
+    L(\mu ; \sigma | X_i) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp{\frac{(X_i-\mu)^2}{2\sigma^2}}\label{gen_eq}
+\end{align}
+Since all the random variables are i.i.d
+\begin{align}
+    L(\mu ; \sigma | X_1,X_2,\ldots,X_n) = \prod_{i=1}^nL(\mu ; \sigma | X_i)\label{main_eq}
+\end{align}
+Let us denote:
+\begin{align}
+    L_m : L(\mu ; \sigma | X_1,X_2,\ldots,X_n)
+\end{align}
+Substituting \eqref{gen_eq} for each Random Variable in \eqref{main_eq}
+\begin{align}
+    L_m = \prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\exp{\frac{(X_i-\mu)^2}{2\sigma^2}}
+\end{align}
+Taking natural log on both sides and simplifying
+\begin{align}
+    \ln{L_m} = \frac{-n}{2}\ln{2\pi} -n\ln{\sigma} - \sum_{i = 1}^n\frac{(X_i - \mu)^2}{2\sigma^2}
+\end{align}
+In order to find Maximum Likelihood we need to maximise $\mu$ and $\sigma$ w.r.t. all Random variables. Taking partial derivative w.r.t $\mu$ and taking $\sigma$ as constant 
+\begin{align}
+    \frac{\partial \ln{L_m}}{\partial \mu} = \sum_{i = 1}^n\frac{(X_i - \mu)}{\sigma^2}
+\end{align}
+The value for $\mu$ at which $L_m$ achieves maximum value is same in $\ln{L_m}$
+\begin{align}
+   \because \frac{\partial \ln{L_m}}{\partial \mu} &=0\\
+   \therefore \sum_{i = 1}^n\frac{(X_i -\mu)}{\sigma^2}&=0
+\end{align}
+On simplifying the expression we get:
+\begin{align}
+    n\mu &= \sum_{i=1}^nX_i\\
+    \mu &= \frac{1}{n}\sum_{i=1}^nX_i\label{mu_value}
+\end{align}
+Let us denote the value achieved in \eqref{mu_value} as $\bar{X}$. Taking partial derivative w.r.t $\sigma$ and taking $\mu$ as constant
+\begin{align}
+    \frac{\partial \ln{L_m}}{\partial \sigma} &= \frac{-n}{\sigma} + \sum_{i=1}^n\frac{(X_i - \mu)^2}{\sigma^3}
+\end{align}
+The value for $\sigma$ at which $L_m$ achieves maximum value is same in $\ln{L_m}$
+\begin{align}
+    \frac{\partial \ln{L_m}}{\partial \sigma} &= 0\\
+    \frac{-n}{\sigma} + \sum_{i=1}^n\frac{(X_i - \mu)^2}{\sigma^3} &=0
+\end{align}
+Upon simplifying the expression
+\begin{align}
+\frac{n}{\sigma} &= \sum_{i=1}^n \frac{(X_i -\mu)^2}{\sigma^3}\\
+{\sigma^2} &= \sum_{i=1}^n\frac{(X_i-\mu)^2}{n}\label{sig_value}
+\end{align}
+Substituting \eqref{mu_value} in \eqref{sig_value}
+\begin{align}
+    {\sigma^2} &= \sum_{i=1}^n\frac{(X_i-\bar{X})^2}{n}\\
+    {\sigma} &= \sqrt{\sum_{i=1}^n\frac{(X_i-\bar{X})^2}{n}}
+\end{align}
+Hence \textbf{Option 3} and \textbf{Option 4} are correct
+\end{document}
