@@ -152,9 +152,9 @@ Let $X \sim B\brak{5,\frac{1}{2}}$ and $Y \sim U(0,1)$. The the value of:
 \[
     \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}}
 \]
-is equal to?
+is equal to? ($X$ and $Y$ are independent)
 \section*{Solution:}
-It is given that $X$ is random variable which follows binomial distribution with $n = 5$ and $p=\frac{1}{2}$. $Y$ is a uniform distribution in the interval $(0,1)$.
+It is given that $X$ is random variable which follows binomial distribution with $n = 5$ and $p=\frac{1}{2}$. $Y$ is a uniform distribution in the interval $(0,1)$. Both $X$ and $Y$ are independent.
 \begin{align}
     \pr{X=k} = \binom{5}{k} \brak{\frac{1}{2}}^5
 \end{align}
@@ -177,7 +177,8 @@ Calculating:
 \end{align}
 \begin{align}
     \pr{X+Y \geq 5} &=\sum_{k=0}^5\pr{X=k,Y\geq 5-k}\\
-    &= 0+\pr{X=5,Y\geq 0}\\
+    &=\sum_{k=0}^5\pr{X=k}\pr{Y\geq 5-k}\\
+    &= 0+\pr{X=5}\pr{Y\geq 0}\\
     &=\binom{5}{5}\brak{\frac{1}{2}}^5\\
     &=\frac{1}{32}\label{eq2}
 \end{align}
