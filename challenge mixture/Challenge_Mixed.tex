@@ -168,6 +168,12 @@ It is given that $X$ is random variable which follows binomial distribution with
 \end{align}
 Calculating:
 \begin{align}
+    \pr{X+Y \geq 5} &=\sum_{k=0}^5\pr{X=k,Y\geq 5-k}\\
+    &=\sum_{k=0}^5\pr{X=k}\pr{Y\geq 5-k}\\
+    &= 0+\pr{X=5}\pr{Y\geq 0}\\
+    &=\binom{5}{5}\brak{\frac{1}{2}}^5=\frac{1}{32}\label{eq2}
+\end{align}
+\begin{align}
     \pr{X+Y \leq 2} &= \pr{X=0, Y\leq 2}\\ \nonumber
     & \quad+\pr{X=1, Y\leq 1}\\ \nonumber
     &\quad +\pr{X=2, Y\leq 0}\\
@@ -175,13 +181,7 @@ Calculating:
     &\quad+0\cdot \binom{5}{2}\brak{\frac{1}{2}}^5\\
     &=\frac{3}{16} \label{eq1}
 \end{align}
-\begin{align}
-    \pr{X+Y \geq 5} &=\sum_{k=0}^5\pr{X=k,Y\geq 5-k}\\
-    &=\sum_{k=0}^5\pr{X=k}\pr{Y\geq 5-k}\\
-    &= 0+\pr{X=5}\pr{Y\geq 0}\\
-    &=\binom{5}{5}\brak{\frac{1}{2}}^5\\
-    &=\frac{1}{32}\label{eq2}
-\end{align}
+
 Substituting \eqref{eq1} and \eqref{eq2}
 \begin{align}
     \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}} = 6
