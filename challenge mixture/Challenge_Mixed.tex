@@ -192,4 +192,52 @@ Substituting \eqref{eq1} and \eqref{eq2}
     \caption{}
     \label{fig:my_label}
 \end{figure}
+\newpage
+\section*{Characteristic function approach}
+Characteristic function for $X \sim B\brak{5,\frac{1}{2}}$ will be:
+\begin{align}
+    C_X(t)=\brak{\frac{e^{it}+1}{2}}^5
+\end{align}
+Characteristic function for $Y \sim U(0,1)$ will be:
+\begin{align}
+    C_Y(t)=\frac{e^{it}-1}{it}
+\end{align}
+Since both $X$ and $Y$ are independent we can take:
+\begin{align}
+    Z&=X+Y\\
+    C_Z(t)&=C_X(t)C_Y(t)
+\end{align}
+Upon substituting:
+\begin{align}
+    C_Z(t)= \frac{(e^{it}+1)^5(e^{it}-1)}{32it}
+\end{align}
+Applying Gil-Pelaez formula:
+\begin{align}
+    F_Z(z)=\frac{1}{2}-\frac{1}{\pi}\int_0^\infty \frac{\text{Im}\brak{e^{-itz}C_Z(t)}}{t}dt
+\end{align}
+\begin{multline*}
+    F_Z(z)=\frac{1}{2}-\frac{1}{\pi}\int_0^\infty\frac{1}{2it}\brak{\frac{(e^{it}+1)^5(e^{it}-1)e^{-itz}}{32it}}\\+\frac{1}{2it}\brak{\frac{(e^{-it}+1)^5(e^{-it}-1)e^{itz}}{32it}}dt
+\end{multline*}
+Substituting $z=2$, the value for $\pr{Z\leq 2}$:
+\begin{align}
+\nonumber
+    &=\frac{1}{2}+\frac{1}{\pi}\int_0^\infty \frac{8\cos{2t}+2\cos{4t}}{64t^2}dt\\
+    &\quad+\frac{1}{\pi}\int_0^\infty\frac{+8\cos{3t}-8\cos{t}-10}{64t^2}dt\\
+    &=\frac{1}{2}+\frac{1}{\pi}\times\frac{-5\pi}{16}=\frac{3}{16}\label{first_value}
+\end{align}
+Similarly on substituting $z=5$, the value for $\pr{Z\leq 5}$:
+\begin{align}
+\nonumber
+    &=\frac{1}{2} +\frac{1}{\pi}\int_0^\infty\frac{-10\cos{3t}-8\cos{4t}}{64t^2}dt\\&\quad +\frac{1}{\pi}\int_0^\infty\frac{-2\cos{5t}+12\cos{t}+8}{64t^2}dt\\
+    &=\frac{1}{2}+\frac{1}{\pi}\times \frac{15\pi}{32}=\frac{31}{32}
+\end{align}
+The value for $\pr{Z\geq 5}$:
+\begin{align}
+    \pr{Z>5}&=1-\pr{Z\leq 5}\\
+    &=1-\frac{31}{32}=\frac{1}{32}\label{second_value}
+\end{align}
+Upon substituting \eqref{first_value}and \eqref{second_value}, we get:
+\begin{align}
+    \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}} = 6
+\end{align}
 \end{document}
