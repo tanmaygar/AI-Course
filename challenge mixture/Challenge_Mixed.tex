@@ -153,47 +153,7 @@ Let $X \sim B\brak{5,\frac{1}{2}}$ and $Y \sim U(0,1)$. The the value of:
     \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}}
 \]
 is equal to? ($X$ and $Y$ are independent)
-\section*{Solution:}
-It is given that $X$ is random variable which follows binomial distribution with $n = 5$ and $p=\frac{1}{2}$. $Y$ is a uniform distribution in the interval $(0,1)$. Both $X$ and $Y$ are independent.
-\begin{align}
-    \pr{X=k} = \binom{5}{k} \brak{\frac{1}{2}}^5
-\end{align}
-\begin{align}
-    F_Y(y) =\pr{Y \leq y} = 
-    \begin{cases}
-        0 & y < 0\\
-        y & 0 \leq y \leq 1\\
-        1 & y > 1
-    \end{cases}
-\end{align}
-Calculating:
-\begin{align}
-    \pr{X+Y \geq 5} &=\sum_{k=0}^5\pr{X=k,Y\geq 5-k}\\
-    &=\sum_{k=0}^5\pr{X=k}\pr{Y\geq 5-k}\\
-    &= 0+\pr{X=5}\pr{Y\geq 0}\\
-    &=\binom{5}{5}\brak{\frac{1}{2}}^5=\frac{1}{32}\label{eq2}
-\end{align}
-\begin{align}
-    \pr{X+Y \leq 2} &= \pr{X=0, Y\leq 2}\\ \nonumber
-    & \quad+\pr{X=1, Y\leq 1}\\ \nonumber
-    &\quad +\pr{X=2, Y\leq 0}\\\nonumber
-    &= 1\times \binom{5}{0}\brak{\frac{1}{2}}^5+1\times \binom{5}{1}\brak{\frac{1}{2}}^5\\ 
-    &\quad+0\times \binom{5}{2}\brak{\frac{1}{2}}^5\\
-    &=\frac{3}{16} \label{eq1}
-\end{align}
-
-Substituting \eqref{eq1} and \eqref{eq2}
-\begin{align}
-    \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}} = 6
-\end{align}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width = \columnwidth]{Figure_1.png}
-    \caption{}
-    \label{fig:my_label}
-\end{figure}
-\newpage
-\section*{Characteristic function approach}
+\section*{Solution: Characteristic function approach}
 Characteristic function for $X \sim B\brak{5,\frac{1}{2}}$ will be:
 \begin{align}
     C_X(t)=\brak{\frac{e^{it}+1}{2}}^5
@@ -205,11 +165,8 @@ Characteristic function for $Y \sim U(0,1)$ will be:
 Since both $X$ and $Y$ are independent we can take:
 \begin{align}
     Z&=X+Y\\
-    C_Z(t)&=C_X(t)C_Y(t)
-\end{align}
-Upon substituting:
-\begin{align}
-    C_Z(t)= \frac{(e^{it}+1)^5(e^{it}-1)}{32it}
+    C_Z(t)&=C_X(t)C_Y(t)\\
+    C_Z(t)&= \frac{(e^{it}+1)^5(e^{it}-1)}{32it}
 \end{align}
 Applying Gil-Pelaez formula:
 \begin{align}
@@ -240,4 +197,10 @@ Upon substituting \eqref{first_value}and \eqref{second_value}, we get:
 \begin{align}
     \frac{\pr{X+Y \leq 2}}{\pr{X+Y \geq 5}} = 6
 \end{align}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.9\columnwidth]{Figure_1.png}
+    \caption{}
+    \label{fig:my_label}
+\end{figure}
 \end{document}
