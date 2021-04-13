@@ -179,12 +179,25 @@ Substituting $z=2$, the value for $\pr{Z\leq 2}$:
 \begin{align}
 \nonumber
     &=\frac{1}{2}+\frac{1}{\pi}\int_0^\infty \frac{8\cos{2t}+2\cos{4t}}{64t^2}dt\\
-    &\quad+\frac{1}{\pi}\int_0^\infty\frac{+8\cos{3t}-8\cos{t}-10}{64t^2}dt\\ \nonumber
+    &\quad+\frac{1}{\pi}\int_0^\infty\frac{+8\cos{3t}-8\cos{t}-10}{64t^2}dt\label{first_sub}
+\end{align}
+Finding a general expression for integrating:
+\begin{align}
+    \int \frac{\cos{ax}}{x^2}dx=-\frac{\cos{ax}}{x}-a\int\frac{\sin{ax}}{x}dx + C\label{gen1}
+\end{align}
+By applying integration by parts. Now finding the value of other integral, by substituting $u=ax$ for limits as $0$ and $\infty$:
+\begin{align}
+    \int_0^\infty\frac{a\sin{ax}}{x}dx &= \int_0^\infty\frac{a\sin{u}}{u}du\\
+    &=\frac{a\pi}{2}\label{gen2}
+\end{align}
+Now using the above general expressions to calculate \eqref{first_sub} and simplifying the expression after putting the limits we get
+\begin{align}
     &=\frac{-1}{8\pi}\brak{\int_0^\infty\frac{\sin{4t}+3\sin{3t}+2\sin{2t}-\sin{t}}{t}dt}\\
     &\quad -\frac{2(\cos{t}-1)(\cos{t}+1)^3}{8\pi t}\bigg|_0^\infty+\frac{1}{2}\\
     &=\frac{1}{2} + \frac{-1}{8\pi}\times \frac{5\pi}{2}+0\\
     &=\frac{3}{16}\label{first_value}
 \end{align}
+Using \eqref{gen2} and \eqref{gen1} to calculate for our second case
 Similarly on substituting $z=5$, the value for $\pr{Z\leq 5}$:
 \begin{align}
 \nonumber
