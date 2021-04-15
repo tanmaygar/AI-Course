@@ -108,14 +108,21 @@ Since both $X$ and $Y$ are independent we can take:
     C_Z(t)&=C_X(t)C_Y(t)\\
     C_Z(t)&= \frac{(e^{it}+1)^5(e^{it}-1)}{32it}
 \end{align}
+
+\end{block}
+\end{frame}
+\begin{frame}{Solution}
+\begin{block}{Characteristic function for $Z$}
 Applying Gil-Pelaez formula:
 \begin{align}
     F_Z(z)=\frac{1}{2}-\frac{1}{\pi}\int_0^\infty \frac{\text{Im}\left(e^{-itz}C_Z(t)\right)}{t}dt
 \end{align}
 \begin{align}
-    F_Z(z)=\frac{1}{2}-\int_0^\infty\frac{1}{2i\pi t}\left(\frac{(e^{it}+1)^5(e^{it}-1)e^{-itz}+(e^{-it}+1)^5(e^{-it}-1)e^{itz}}{32it}\right)
+\nonumber
+    F_Z(z)&=\frac{1}{2}\\&\quad-\int_0^\infty\frac{1}{2i\pi t}\left(\frac{(e^{it}+1)^5(e^{it}-1)e^{-itz}+(e^{-it}+1)^5(e^{-it}-1)e^{itz}}{32it}\right)dt
 \end{align}
 \end{block}
+    
 \end{frame}
 \begin{frame}{Solution}
     \begin{block}{$\pr{X+Y \leq 2}$ or $\pr{Z\leq 2}$}
@@ -128,7 +135,7 @@ Applying Gil-Pelaez formula:
     \end{block}
 \end{frame}
 \begin{frame}{Solution}
-\begin{block}{Integration Method}
+\begin{block}{Integration}
 Finding a general expression for integrating:
 \begin{align}
     \int \frac{\cos{ax}}{x^2}dx=-\frac{\cos{ax}}{x}-a\int\frac{\sin{ax}}{x}dx + C\label{gen1}
